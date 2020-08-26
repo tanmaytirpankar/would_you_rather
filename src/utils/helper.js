@@ -18,3 +18,11 @@ export function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
+export function getUserData({id, name, avatarURL}) {
+  return {
+    id: id,
+    name: name,
+    avatarURL: avatarURL
+  }
+}
+

@@ -7,11 +7,22 @@
   pointer-events: none;
 }
 
+h2 {
+  color: green
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.topnav a:link {
+  background-color: white;
+  color: black;
+  text-align: left;
+}
+
 
 .App-header {
   background-color: #282c34;
