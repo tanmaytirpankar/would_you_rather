@@ -1,0 +1,16 @@
+.login {
+	align-items: center;
+	border: 2px solid grey;
+	margin: auto;
+	width: 50%;
+}
+
+.greeting {
+	background: grey;
+}
+
+input {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+}

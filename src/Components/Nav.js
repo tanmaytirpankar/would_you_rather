@@ -1,3 +1,4 @@
+import './Nav.css'
 import React, { Component} from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -19,32 +20,24 @@ class Nav extends Component {
 	render () {
 		return( 
 			<nav className='nav'>
-				<ul>
-					<li>
-						<NavLink to='/questions' activeClassName='active' onClick={this.checkAuthedUser}>
-							Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/add' activeClassName='active' onClick={this.checkAuthedUser}>
-							Create Question
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/leaderboard' exact activeClassName='active' onClick={this.checkAuthedUser}>
-							Leader Board
-						</NavLink>
-					</li>
-				</ul>
+				<NavLink className="navlink" to='/questions' activeClassName='active' onClick={this.checkAuthedUser}>
+					Home
+				</NavLink>
+				<NavLink className="navlink" to='/add' activeClassName='active' onClick={this.checkAuthedUser}>
+					Create Question
+				</NavLink>
+				<NavLink className="navlink" to='/leaderboard' exact activeClassName='active' onClick={this.checkAuthedUser}>
+					Leader Board
+				</NavLink>
 				{this.props.authedUser === null
-				? <div></div>
-				: <div className="currentUser">
+				? <span></span>
+				: <span className="currentUser">
 					<p>Hello, {this.props.authedUser.name}</p>
-					<img src="{this.props.authedUser.avatarURL}"/>
+					<img src="{this.props.authedUser.avatarURL}" alt="Avatar not found"/>
 					<NavLink to='/' exact>
 						<button type="push" onClick={this.handleOnClick}>Logout</button>
 					</NavLink>
-				</div> }
+				</span> }
 			</nav>
 		)
 	}

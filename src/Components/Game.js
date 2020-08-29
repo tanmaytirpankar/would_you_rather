@@ -1,8 +1,10 @@
+import './Game.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUserData } from '../utils/helper.js'
 import { handleSelectAnswer } from '../Actions/shared.js'
 import Stats from './Stats.js'
+
 
 class Game extends Component {
 	state = {
@@ -10,6 +12,11 @@ class Game extends Component {
 	}
 
 	componentDidMount() {
+		if (this.props.id==="") {
+			alert("Login to visit page.")
+			this.props.history.replace("/404")
+			return null
+		}
 		this.props.id in this.props.authedUser['answers']
 		?this.setState(() => ({answered: true}))
 		:this.setState(() => ({answered: false}))
@@ -37,6 +44,9 @@ class Game extends Component {
 	}
 
 	render() {
+		if (this.props.id==="") {
+			return null
+		}
 		let optionOneText=this.props.question.optionOne.text
 		let optionTwoText=this.props.question.optionTwo.text
 		let optionOneVotes=this.props.question.optionOne.votes.length
@@ -47,7 +57,7 @@ class Game extends Component {
 					this.state.answered === false
 					? <div className='Game'>
 						<p>{this.props.user.name} asks</p>
-						<img src="{this.props.user.avatarURL}"/>
+						<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
 						<p>Would You Rather...</p>
 						<form>
 							<input type='radio' id="option_one" value="optionOne"/>
@@ -60,7 +70,7 @@ class Game extends Component {
 					</div>
 					: <div className='Result'>
 						<p>Added by {this.props.user.name}</p>
-						<img src="{this.props.user.avatarURL}"/>
+						<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
 						<p>Results:</p>
 						<Stats optionText={optionOneText} votes={optionOneVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionOne"} />
 						<Stats optionText={optionTwoText} votes={optionTwoVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionTwo"}/>
@@ -73,6 +83,9 @@ class Game extends Component {
 }
 
 function mapStateToProps ({authedUser, users, questions}, { id }) {
+	if(id==="") {
+		return {authedUser}
+	}
 	return {
 		authedUser,
 		user: getUserData(users[questions[id].author]),

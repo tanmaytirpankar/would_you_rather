@@ -1,9 +1,7 @@
 import { getInitialData, saveQuestionAnswer, saveQuestion } from '../utils/api.js'
 import { receiveUsers, saveAnswer, addQuestion } from './users.js'
 import { receiveQuestions, saveUsersChoice, createQuestion } from './questions.js'
-import { setAuthedUser, addQuestionToActiveUser, saveAnswerToQuestion } from './authedUser.js'
-
-const AUTHED_ID = 'tylermcginnis'
+import { addQuestionToActiveUser, saveAnswerToQuestion } from './authedUser.js'
 
 export function handleInitialData () {
 	return (dispatch) => {

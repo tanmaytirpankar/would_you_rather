@@ -1,3 +1,4 @@
+import './NewQuestion.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleCreateQuestion } from '../Actions/shared.js'

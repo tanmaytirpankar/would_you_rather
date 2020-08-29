@@ -1,10 +1,11 @@
+import './Rank.css'
 import React from 'react'
 
 function Rank (props) {
 	return (
 		<div className="rank">
-			//logo
-			<img src="{props.avatar}"/>
+			(//logo)
+			<img src="{props.avatar}" alt="Avatar not found"/>
 			{props.name}
 			Answered Questions 
 			{props.answers}

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import './LeaderBoard.css'
+import React from 'react'
 import { connect } from 'react-redux'
 import Rank from './Rank.js'
 import { withRouter } from 'react-router-dom'

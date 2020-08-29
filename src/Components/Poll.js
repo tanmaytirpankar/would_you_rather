@@ -1,7 +1,7 @@
+import './Poll.css'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion, getUserData } from '../utils/helper.js'
-import { Redirect } from 'react-router-dom'
+import { getUserData } from '../utils/helper.js'
 
 class Poll extends Component {
 	handleClickEvent = (e) => {
@@ -13,7 +13,7 @@ class Poll extends Component {
 		return (
 			<div className='poll'>
 				<p>{this.props.user.name}</p>
-				<img src="{this.props.user.avatarURL}"/>
+				<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
 				<p>Would You Rather...</p>
 				<p>{this.props.question.optionOne.text}</p>
 				<button onClick={this.handleClickEvent}>View Poll</button>

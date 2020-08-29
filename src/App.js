@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
 import './App.css';
 import { handleInitialData } from './Actions/shared';
 import { connect } from 'react-redux'
@@ -9,6 +8,7 @@ import Game from './Components/Game.js'
 import NewQuestion from './Components/NewQuestion.js'
 import LeaderBoard from './Components/LeaderBoard.js'
 import Nav from './Components/Nav.js'
+import NotFound from './Components/NotFound.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -32,7 +32,8 @@ class App extends Component {
                     <div>
                         <Switch>
                             <Route exact path='/' component={Login} />
-                            <Route exact path='/questions' exact render={(props)=>(<Home {...props} handleIdPass={this.getId}/>)} />
+                            <Route path='/404' component={NotFound} />
+                            <Route exact path='/questions' render={(props)=>(<Home {...props} handleIdPass={this.getId}/>)} />
                             <Route path='/add' component={NewQuestion} />
                             <Route path='/leaderboard' component={LeaderBoard} />
                             <Route path={'/questions/'.concat(this.state.currentQuestionId)} render={(props)=>(<Game {...props} id={this.state.currentQuestionId} />)} />

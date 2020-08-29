@@ -1,0 +1,10 @@
+nav {
+	height: 50px;
+	align-items: center;
+}
+
+.navlink {
+  	color: black;
+  	padding: 10px;
+}
+

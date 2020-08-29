@@ -1,3 +1,4 @@
+import './Rank.css'
 import React from 'react'
 
 function Stats (props) {

@@ -1,3 +1,4 @@
+import './Login.css'
 import React, { Component } from 'react'
 import logo from '../logo.svg';
 import { connect } from 'react-redux'
@@ -16,8 +17,10 @@ class Login extends Component {
     render() {
         return (
             <div className='login'>
-                <h3>Welcome to the Would You Rather App!</h3>
-                <p>Please sign in to continue</p>
+                <div className='greeting'>
+                    <h3>Welcome to the Would You Rather App!</h3>
+                    <p>Please sign in to continue</p>
+                </div>
                 <img src={logo} className="App-logo" alt="logo" />
                 <h2>Sign In</h2>
                 <form>
