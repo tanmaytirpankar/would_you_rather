@@ -2,6 +2,20 @@
 
 This project was created from the Create React App project.
 
+## Usage
+
+Simply clone/pull this repository. 
+Execute following commands to start project locally.
+
+cd would_you_rather
+npm install
+yarn start
+
+## Project Design
+
+The project files are in the "src" directory and have been divided into Actions, Reducers, Components, utils directories. App.js is the root file.
+
+
 ### Users
 
 Users include:
