@@ -1,0 +1,23 @@
+.poll {
+	align-items: center;
+	border: 2px solid grey;
+	margin: auto;
+	width: 50%;
+	text-align: left
+}
+
+.author {
+	background: grey;
+	border-bottom: 2px solid black;
+}
+
+.poll img {
+	float: left;
+	border-right: 2px solid black;
+	width: 20%;
+	height: 100%;
+}
+
+.poll button {
+	width: 100%;
+}

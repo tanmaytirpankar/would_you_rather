@@ -58,33 +58,27 @@ class Home extends Component {
 					? <Game id={this.state.viewid} />
 					: <div className="Polls">
 						<div className="tab">
-						  <button id="UnansweredButton" className="tablinks" onClick={this.tabSwitcher} value="Unanswered">Unanswered Questions</button>
-						  <button id="AnsweredButton" className="tablinks" onClick={this.tabSwitcher} value="Answered">Answered Questions</button>
+						  	<button id="UnansweredButton" className="tablinks" onClick={this.tabSwitcher} value="Unanswered">Unanswered Questions</button>
+						  	<button id="AnsweredButton" className="tablinks" onClick={this.tabSwitcher} value="Answered">Answered Questions</button>
 						</div>
-						<ul className='poll-list'>
-							<div id="Unanswered" className="tabcontent"> {
-								this.props.unansweredQuestionIds!==undefined
-								? this.props.unansweredQuestionIds.map((id) => (
-									<div key={id}>
-										<li>
-											<Poll id={id} handleButtonClick={this.handleClickEvent}/>
-										</li>
-										<br/>
-									</div>
-								)): <div></div>
-							} </div>
-							<div id="Answered" className="tabcontent"> {
-								this.props.unansweredQuestionIds!==undefined
-								? this.props.answeredQuestionIds.map((id) => (
-									<div key={id}>
-										<li>
-											<Poll id={id} handleButtonClick={this.handleClickEvent}/>
-										</li>
-										<br/>
-									</div>
-								)): <div></div>
-							} </div>
-						</ul>
+						<div id="Unanswered" className="tabcontent"> {
+							this.props.unansweredQuestionIds!==undefined
+							? this.props.unansweredQuestionIds.map((id) => (
+								<div key={id}>
+									<Poll id={id} handleButtonClick={this.handleClickEvent}/>
+									<br/>
+								</div>
+							)): <div></div>
+						} </div>
+						<div id="Answered" className="tabcontent"> {
+							this.props.unansweredQuestionIds!==undefined
+							? this.props.answeredQuestionIds.map((id) => (
+								<div key={id}>
+									<Poll id={id} handleButtonClick={this.handleClickEvent}/>
+									<br/>
+								</div>
+							)): <div></div>
+						} </div>
 					</div>
 				}
 			</div>

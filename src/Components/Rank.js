@@ -4,15 +4,15 @@ import React from 'react'
 function Rank (props) {
 	return (
 		<div className="rank">
-			(//logo)
-			<img src="{props.avatar}" alt="Avatar not found"/>
-			{props.name}
-			Answered Questions 
-			{props.answers}
-			Created Questions 
-			{props.questions}
-			Score
-			{props.answers+props.questions}
+			<img src={props.avatar} alt="Avatar not found"/>
+			<div className="score">
+				<b>Score</b>	
+				<br/><br/>
+				<h1>{props.answers+props.questions}</h1>
+			</div>
+			<h1>{props.name}</h1>
+			<pre>Answered questions              {props.answers}</pre>
+			<pre>Created Questions               {props.questions}</pre>
 		</div>
 	)
 }

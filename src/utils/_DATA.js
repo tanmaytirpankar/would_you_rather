@@ -1,10 +1,13 @@
 import { formatQuestion } from './helper.js';
+import sara from './sarahedo.jpeg'
+import tylermcginnis from './tylermcginnis.png'
+import johndoe from './johndoe.png'
 
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://s3.amazonaws.com/artistsnclients/k63/samples/pju_800.JPG',
+    avatarURL: sara,
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -16,7 +19,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/12/9-Best-Online-Avatars-and-How-to-Make-Your-Own-for-Free-image1-5.png',
+    avatarURL: tylermcginnis,
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -26,7 +29,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://dentalogica-practice.co.uk/wp-content/uploads/2017/07/male-avatar-md.png',
+    avatarURL: johndoe,
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

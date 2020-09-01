@@ -55,8 +55,9 @@ class NewQuestion extends Component {
 			<div className="new_question">
 				<h3>Create New Question</h3>
 				Complete the Question
-				<br/>
+				<br/><br/>
 				<b>Would you rather...</b>
+				<br/><br/>
 				<form>
 					<input type="text" id="optionOne" onChange={this.handleChange} placeholder="Enter Option One Text Here"/>
 					<h2>OR</h2>

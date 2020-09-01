@@ -14,17 +14,17 @@ function LeaderBoard (props){
 			props.history.replace("")
 		}
 		return (
-			<div className="leaderboard"> <ul> {
+			<div className="leaderboard"> {
 				userKeys.map((user) => (
-					<li key={props.users[user].id}>
-						<Rank 
+					<div key={props.users[user].id}>
+						<Rank
 						avatar={props.users[user].avatarURL} 
 						name={props.users[user].name} 
 						answers={Object.keys(props.users[user].answers).length} 
 						questions={props.users[user].questions.length}/>
-					</li>
+					</div>
 				))
-			} </ul> </div>
+			} </div>
 		)
 	
 }

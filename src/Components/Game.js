@@ -55,26 +55,36 @@ class Game extends Component {
 			<div>
 				{
 					this.state.answered === false
-					? <div className='Game'>
-						<p>{this.props.user.name} asks</p>
-						<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
-						<p>Would You Rather...</p>
-						<form>
-							<input type='radio' id="option_one" value="optionOne"/>
-							<label htmlFor="option_one">{optionOneText}</label>
-							<input type='radio' id="option_two" value="optionTwo"/>
-							<label htmlFor="option_two">{optionTwoText}</label>
-							<input type='submit' onClick={this.handleClickEvent}/>
-						</form>
-						<br/>
+					? <div className='game'>
+						<div className='author'>
+							{this.props.user.name} asks:
+						</div>
+						<div className="game_interface">
+							<img src={this.props.user.avatarURL} alt="Avatar not found"/>
+							<h2>Would You Rather...</h2><br/><br/>
+							<form>
+								<input name="option" type='radio' id="option_one" value="optionOne"/>
+								<label htmlFor="option_one">{optionOneText}</label>
+								<br/><br/>
+								<input name="option" type='radio' id="option_two" value="optionTwo"/>
+								<label htmlFor="option_two">{optionTwoText}</label>
+								<br/><br/>
+								<input type='submit' onClick={this.handleClickEvent}/>
+							</form>
+							<br/>
+						</div>
 					</div>
-					: <div className='Result'>
-						<p>Added by {this.props.user.name}</p>
-						<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
-						<p>Results:</p>
-						<Stats optionText={optionOneText} votes={optionOneVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionOne"} />
-						<Stats optionText={optionTwoText} votes={optionTwoVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionTwo"}/>
-						<br/>
+					: <div className='result'>
+						<div className='author'>
+							Added by {this.props.user.name}
+						</div>
+						<div className='result_interface'>
+							<img src={this.props.user.avatarURL} alt="Avatar not found"/>
+							<h2>Results:</h2>
+							<Stats optionText={optionOneText} votes={optionOneVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionOne"} />
+							<Stats optionText={optionTwoText} votes={optionTwoVotes} total={optionOneVotes+optionTwoVotes} selected={this.props.authedUser.answers[this.props.id]==="optionTwo"}/>
+							<br/>
+						</div>
 					</div>
 				}
 			</div>

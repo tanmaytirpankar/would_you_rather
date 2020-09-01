@@ -1,10 +1,26 @@
-nav {
+.nav {
 	height: 50px;
-	align-items: center;
+	text-align: left;
+	padding-left: 20%;
 }
 
 .navlink {
+	line-height: 50px;
   	color: black;
-  	padding: 10px;
+  	text-decoration: none;
 }
 
+span {
+	padding-left: 15%;
+}
+
+.nav img {
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 3%;
+}
+
+a.active {
+	background-color: green;
+	color: white
+}

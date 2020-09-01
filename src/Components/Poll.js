@@ -12,12 +12,18 @@ class Poll extends Component {
 	render() {
 		return (
 			<div className='poll'>
-				<p>{this.props.user.name}</p>
-				<img src="{this.props.user.avatarURL}" alt="Avatar not found"/>
-				<p>Would You Rather...</p>
-				<p>{this.props.question.optionOne.text}</p>
-				<button onClick={this.handleClickEvent}>View Poll</button>
-				<br/>
+				<div className="author">
+					{this.props.user.name} asks:
+				</div>
+				<div className="poll_intro">
+					<img src={this.props.user.avatarURL} alt="Avatar not found"/>
+					<br/>
+					<b>Would You Rather...</b>
+					<br/><br/>
+					...{this.props.question.optionOne.text}...
+					<br/>
+					<button onClick={this.handleClickEvent}>View Poll</button>
+				</div>
 			</div>
 		)
 	}

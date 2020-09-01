@@ -1,16 +1,17 @@
-import './Rank.css'
+import './Stats.css'
 import React from 'react'
 
 function Stats (props) {
 	return (
 		<div className='stats'>
 			{props.selected
-			? <p>Your vote</p>
+			? <p className="vote">Your vote</p>
 			: <p></p>
 			}
-			<p>{props.optionText}</p>
+			Would you rather {props.optionText}?
 			<br/>
-			<p>percentage bar</p>
+			<progress value={props.votes} max={props.total}/>
+			{props.votes/props.total*100}%
 			<br/>
 			<p>{props.votes} out of {props.total}</p>
 		</div>

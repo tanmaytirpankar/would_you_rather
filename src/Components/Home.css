@@ -1,0 +1,8 @@
+button.active {
+	background-color: green;
+	color: white
+}
+
+button {
+	font-weight: bold;
+}

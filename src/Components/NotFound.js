@@ -7,9 +7,7 @@ function NotFound() {
 	return (
 		<div className="notfound">
 			<img src={logo} className="App-logo" alt="logo" />
-			<p>Great. You just broke the internet. Go 
-			<NavLink to="/"> back </NavLink> 
-			to where you came from.</p>
+			<p>Great. You just broke the internet. Go <NavLink to="/">back</NavLink> to where you came from.</p>
 		</div>
 	)
 }

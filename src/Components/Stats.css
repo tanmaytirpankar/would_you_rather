@@ -1,0 +1,12 @@
+.stats {
+	border: 2px solid grey;
+	margin: auto;
+	text-align: left;
+	align-self: right;
+}
+
+.vote {
+	background-color: green;
+	color: white;
+	font-weight: bold
+}

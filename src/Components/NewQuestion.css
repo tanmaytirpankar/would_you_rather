@@ -1,0 +1,29 @@
+.new_question {
+	text-align: left;
+	border: 2px solid grey;
+	margin: auto;
+	width: 34%;
+}
+
+.new_question input {
+	background-color: transparent;
+}
+
+h3 {
+	text-align: center;
+	border-bottom: 2px solid gray;
+	padding-bottom: 20px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.new_question button {
+	width: 100%;
+}
+
+.new_question input {
+	width: 98.5%;
+	color: black;
+}

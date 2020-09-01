@@ -19,26 +19,28 @@ class Nav extends Component {
 	}
 	render () {
 		return( 
-			<nav className='nav'>
-				<NavLink className="navlink" to='/questions' activeClassName='active' onClick={this.checkAuthedUser}>
-					Home
+			<div className='nav'>
+				<NavLink className="navlink" to='/questions' exact activeClassName='active' onClick={this.checkAuthedUser}>
+					<b>Home</b>
 				</NavLink>
+				&nbsp;&nbsp;
 				<NavLink className="navlink" to='/add' activeClassName='active' onClick={this.checkAuthedUser}>
-					Create Question
+					<b>Create Question</b>
 				</NavLink>
-				<NavLink className="navlink" to='/leaderboard' exact activeClassName='active' onClick={this.checkAuthedUser}>
-					Leader Board
+				&nbsp;&nbsp;
+				<NavLink className="navlink" to='/leaderboard' activeClassName='active' onClick={this.checkAuthedUser}>
+					<b>Leader Board</b>
 				</NavLink>
 				{this.props.authedUser === null
 				? <span></span>
 				: <span className="currentUser">
-					<p>Hello, {this.props.authedUser.name}</p>
-					<img src="{this.props.authedUser.avatarURL}" alt="Avatar not found"/>
+					Hello, {this.props.authedUser.name}
+					<img src={this.props.authedUser.avatarURL} alt="Avatar not found"/>
 					<NavLink to='/' exact>
 						<button type="push" onClick={this.handleOnClick}>Logout</button>
 					</NavLink>
 				</span> }
-			</nav>
+			</div>
 		)
 	}
 }
